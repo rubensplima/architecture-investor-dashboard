@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Dashboard interativo do portfólio de projetos de arquitetura para investidores.">
+  <title>Portfólio Arquitetura — Investor View</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <div><strong>PORTFÓLIO ARQUITETURA</strong><small>INVESTOR VIEW · AGO 2026</small></div>
+    </div>
+    <div class="top-actions">
+      <span class="data-status"><b></b> Base consolidada</span>
+      <button class="story-button" id="openStory"><span>▶</span> Apresentar história</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro-row">
+      <div>
+        <p class="eyebrow">VISÃO EXECUTIVA</p>
+        <h1>Um portfólio robusto.<br><em>Com riscos que pedem foco.</em></h1>
+      </div>
+      <p class="intro-copy" id="executiveSummary"></p>
+    </section>
+
+    <section class="filters" aria-label="Filtros do dashboard">
+      <label><span>Segmento</span><select id="segmentFilter"><option value="">Todos os segmentos</option></select></label>
+      <label><span>Status</span><select id="statusFilter"><option value="">Todos os status</option></select></label>
+      <label><span>Risco</span><select id="riskFilter"><option value="">Todos os riscos</option></select></label>
+      <label><span>Diretor</span><select id="directorFilter"><option value="">Todos os diretores</option></select></label>
+      <label class="search-label"><span>Projeto ou cliente</span><input id="searchFilter" type="search" placeholder="Buscar na carteira…"></label>
+      <button id="clearFilters" class="clear-button">Limpar filtros</button>
+    </section>
+
+    <section class="kpis" id="kpis" aria-label="Indicadores principais"></section>
+
+    <section class="grid-main">
+      <article class="panel status-panel">
+        <div class="panel-head"><div><span class="section-number">01</span><h2>Composição do portfólio</h2></div><small>PROJETOS POR STATUS</small></div>
+        <div class="status-content">
+          <div class="donut-wrap"><div class="donut" id="statusDonut"><div><strong id="donutTotal">0</strong><span>projetos</span></div></div></div>
+          <div class="legend" id="statusLegend"></div>
+        </div>
+      </article>
+
+      <article class="panel segment-panel">
+        <div class="panel-head"><div><span class="section-number">02</span><h2>Escala por segmento</h2></div><small>HONORÁRIOS × BACKLOG</small></div>
+        <div class="bar-chart" id="segmentChart"></div>
+        <div class="chart-key"><span><i class="key-fees"></i>Honorários</span><span><i class="key-backlog"></i>Backlog</span></div>
+      </article>
+
+      <article class="panel scatter-panel">
+        <div class="panel-head"><div><span class="section-number">03</span><h2>Retorno versus execução</h2></div><small>MARGEM PREVISTA × DESVIO DE PRAZO</small></div>
+        <div class="scatter-chart" id="scatterChart" role="img" aria-label="Dispersão de margem e atraso dos projetos"></div>
+        <div class="chart-note">Cada círculo é um projeto · tamanho representa honorários · vermelho indica risco alto</div>
+      </article>
+
+      <article class="panel thesis-panel">
+        <div class="panel-head"><div><span class="section-number">04</span><h2>Tese para investidores</h2></div><small>LEITURA DOS DADOS</small></div>
+        <div class="thesis-list" id="thesisList"></div>
+      </article>
+    </section>
+
+    <section class="panel priority-panel">
+      <div class="panel-head"><div><span class="section-number">05</span><h2>Projetos que exigem atenção</h2></div><small id="portfolioCount"></small></div>
+      <div class="table-wrap">
+        <table><thead><tr><th>Projeto</th><th>Cliente</th><th>Segmento</th><th>Status</th><th>Risco</th><th class="num">Desvio</th><th class="num">Contrato</th><th class="num">Backlog</th><th class="num">Margem</th></tr></thead><tbody id="projectTable"></tbody></table>
+      </div>
+    </section>
+
+    <footer><span>BASE SINTÉTICA PARA EXERCÍCIO ANALÍTICO</span><span>Posição: 31 ago 2026 · Valores em BRL</span></footer>
+  </main>
+
+  <div class="story-overlay" id="storyOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="História do portfólio">
+    <div class="story-shell">
+      <div class="story-top"><div class="brand compact"><span class="brand-mark"><i></i><i></i><i></i></span><strong>INVESTOR STORY</strong></div><button id="closeStory" aria-label="Fechar apresentação">×</button></div>
+      <div class="story-progress" id="storyProgress"></div>
+      <div class="story-slide" id="storySlide"></div>
+      <div class="story-nav"><span id="storyCounter"></span><div><button id="prevStory">← Anterior</button><button id="nextStory">Próximo →</button></div></div>
+    </div>
+  </div>
+
+  <div class="tooltip" id="tooltip" role="status"></div>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
