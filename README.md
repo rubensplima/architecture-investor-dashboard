@@ -2,7 +2,7 @@
 
 Dashboard executivo interativo criado para transformar uma base de projetos de um escritório de arquitetura em uma narrativa clara para investidores.
 
-**Demo:** [rubensplima.github.io/architecture-investor-dashboard](https://rubensplima.github.io/architecture-investor-dashboard/)
+**Demo pública:** [Abrir dashboard no GitHub Pages](https://rubensplima.github.io/architecture-investor-dashboard/)
 
 **Repositório:** [github.com/rubensplima/architecture-investor-dashboard](https://github.com/rubensplima/architecture-investor-dashboard)
 
