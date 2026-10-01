@@ -38,7 +38,7 @@ HTML, CSS, JavaScript e SVG.
 
 ## Links
 
-- **Demo:** https://portfolio-arquitetura-investidores.rubensplima.chatgpt.site
+- **Demo:** https://rubensplima.github.io/architecture-investor-dashboard/
 - **Código:** https://github.com/rubensplima/architecture-investor-dashboard
 
 ## Observação
