@@ -47,6 +47,21 @@ Principais componentes:
 - SVG para visualização de dados
 - Nenhuma dependência externa
 
+## Base de dados
+
+A base contém 60 projetos fictícios e 37 campos financeiros, operacionais e de relacionamento com clientes. A posição é 31 de agosto de 2026 e os valores monetários estão em reais.
+
+- [Baixar a base em Excel](data/base_projetos_arquitetura.xlsx)
+- [Consultar o dicionário de dados](docs/dicionario-de-dados.md)
+
+O arquivo Excel contém três abas:
+
+- `Resumo`: principais indicadores com fórmulas auditáveis;
+- `Projetos`: os 60 registros utilizados pelo dashboard;
+- `Dicionario`: definição, tipo e finalidade de cada campo.
+
+Para utilizar no Google Sheets, baixe o arquivo, abra o Google Drive e selecione **Novo → Upload de arquivo**. Depois, abra o `.xlsx` com o Google Planilhas. As fórmulas, datas, filtros e formatações principais são compatíveis com a importação.
+
 ## Executar localmente
 
 Na pasta do projeto, rode:
@@ -75,10 +90,24 @@ Também é possível abrir `index.html` diretamente no navegador.
 ├── styles.css          # identidade visual e responsividade
 ├── app.js              # filtros, cálculos, gráficos e narrativa
 ├── data.js             # base sintética incorporada
+├── data/
+│   └── base_projetos_arquitetura.xlsx
 ├── favicon.svg         # identidade do projeto
+├── docs/
+│   ├── memoria-de-calculo.md
+│   ├── dicionario-de-dados.md
+│   └── analise-e-insights.md
 ├── portfolio-entry.md  # texto pronto para o portfólio
 └── README.md
 ```
+
+## Documentação da análise
+
+- [Memória de cálculo e regras de negócio](docs/memoria-de-calculo.md)
+- [Dicionário de dados](docs/dicionario-de-dados.md)
+- [Análise, insights e recomendações](docs/analise-e-insights.md)
+
+Esses documentos registram a origem sintética da base, as fórmulas dos indicadores, as regras usadas no dashboard, a interpretação das visualizações, as decisões apoiadas e os próximos passos da solução.
 
 ## Decisões de design
 
